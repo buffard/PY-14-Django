@@ -1,0 +1,16 @@
+{% extends "artists/base.html"%}
+
+{% block content %}
+<h3>Choose an Artist</h3>
+<ul>
+  {% for artist in latest_artist %}
+  <li>
+    <a href="/artists/{{ artist.id }}/">
+      {{artist.name}}
+    </a>
+  </li>
+  {% empty %}
+  <li>No artists have been added yet.</li>
+  {% endfor %}
+</ul>
+{% endblock content %}
