@@ -13,4 +13,12 @@
   <li>No artists have been added yet.</li>
   {% endfor %}
 </ul>
+<form action="{% url 'history:addArtist' %}" method="post">
+  {% csrf_token %}
+  <input type="text" name="artistName" />
+  <input type="text" name="artistEstablished" />
+  <input type="submit" value="Add New Artist" />
+</form>
+
+
 {% endblock content %}
